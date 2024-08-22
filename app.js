@@ -35,15 +35,19 @@ function nextPrime(num) {
 app.post('/calculate', (req, res) => {
     console.log('Received:', req.body);
     const { num1, num2 } = req.body;
-
+    console.log("arrivo qui 1\n");
     //send data to client in JSON format
     let sum = parseInt(num1) + parseInt(num2)
     let maxNum = Math.max(num1, num2);
-    let first_prime = nextPrime(maxNum);
+    console.log("arrivo qui 2\n");
+    let first_prime = 54;
+
     res.json({
         result: sum,
         firstPrime: first_prime
     });
+    console.log("arrivo qui 3\n");
+
 })
 
 

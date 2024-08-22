@@ -33,16 +33,19 @@ function nextPrime(num) {
 
 // Endpoint POST /calculate
 app.post('/calculate', (req, res) => {
+    console.log('Received:', req.body);
     const { num1, num2 } = req.body;
 
     //send data to client in JSON format
     let sum = parseInt(num1) + parseInt(num2)
-    let first_prime = nextPrime(Math.max(num1, num2));
+    let maxNum = Math.max(num1, num2);
+    let first_prime = nextPrime(maxNum);
     res.json({
         result: sum,
         firstPrime: first_prime
     });
 })
+
 
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)

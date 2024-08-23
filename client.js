@@ -13,5 +13,5 @@ document.getElementById('dataForm').addEventListener('submit', async function (e
     });
     // console.log('Sending:', { num1, num2 });
     const data = await response.json();
-    document.getElementById('result').textContent = `Server Response:  sum: ${data.result} \n first prime grather than: ${Math.max(num1, num2)} is ${data.firstPrime}`;
+    document.getElementById('result').textContent = `Server Response:  sum: ${data.result} \n first prime grather than: ${Math.max(num1, num2)} is ${data.firstPrime}, so the final result is ${data.finalResult} `;
 });

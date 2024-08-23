@@ -41,11 +41,13 @@ app.post('/calculate', (req, res) => {
 
     let first_prime = nextPrime(maxNum);
 
+    let final_result = first_prime + sum;
 
     //send data to client in JSON format
     res.json({
         result: sum,
-        firstPrime: first_prime
+        firstPrime: first_prime,
+        finalResult: final_result
     });
 
 

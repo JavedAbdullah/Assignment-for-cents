@@ -12,8 +12,8 @@ app.use(bodyParser.json());
 
 function is_prime(n) {
     if (n <= 1) { return false; }
-    if (n <= 3) { return true }
-    for (i = 5; i <= n; i++) {
+    if (n <= 3) { return true; }
+    for (i = 2; i < n; i++) {
         if (n % i == 0) {
             return false;
         }
@@ -23,7 +23,7 @@ function is_prime(n) {
 
 function nextPrime(num) {
     num++;
-    while (!is_prime(num++)) {
+    while (!is_prime(num)) {
         num++;
     }
 
@@ -40,13 +40,13 @@ app.post('/calculate', (req, res) => {
     let sum = parseInt(num1) + parseInt(num2)
     let maxNum = Math.max(num1, num2);
     console.log("arrivo qui 2\n");
-    let first_prime = 54;
-
+    let first_prime = nextPrime(maxNum);
+    console.log("arrivo qui 3\n");
     res.json({
         result: sum,
         firstPrime: first_prime
     });
-    console.log("arrivo qui 3\n");
+    console.log("arrivo qui 4\n");
 
 })
 
